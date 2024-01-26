@@ -1,7 +1,15 @@
+:root
+{
+    --font-color: black;
+    --header-color: white;
+    --cards-color: rgba(255, 255, 255, 0.577);
+    --cards-hover-color: rgba(255, 255, 255, 0.888);
+}
+
 body
 {
     background: url('https://images.unsplash.com/photo-1514625895778-692f4e00ec41?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    background-color: white;
+    background-color: var(--header-color);
     background-repeat: no-repeat;
     background-position-x: center;
     background-size: auto;
@@ -10,7 +18,7 @@ body
 }
 header
 {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--header-color);
     text-align: center;
     font-size: large;
     display: grid;
@@ -31,7 +39,7 @@ header a:hover
 a, a:visited, a:active
 {
     text-decoration: none;
-    color: black;
+    color: var(--font-color);
 }
 .cards
 {
@@ -56,7 +64,7 @@ a, a:visited, a:active
 {
     position: absolute;
     margin: 2rem;
-    background-color: rgba(255, 255, 255, 0.577);
+    background-color: var(--cards-color);
     height: calc(100% - 4rem);
     width: calc(100% - 4rem);
     border: 0;
@@ -65,7 +73,7 @@ a, a:visited, a:active
 }
 .card .content:hover
 {
-    background-color: rgba(255, 255, 255, 0.888);
+    background-color: var(--cards-hover-color);
     cursor: pointer;
 }
 

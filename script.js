@@ -1,4 +1,4 @@
-apiUrl = 'https://webmosaic.petrichor.events/'
+const apiUrl = 'https://webmosaic.petrichor.events/'
 
 var response = null
 var posts = null
@@ -48,7 +48,7 @@ const arrangeData = () => {
             // document.getElementById('cards').appendChild(div);
             document.getElementById('cards').innerHTML += `
             <section class="card">
-                <button class="content" onclick='createNewsContentPage("${posts.posts[i].name}", ${posts.posts[i].id})'>
+                <button class="content" onclick='createNewsContentPage(${posts.posts[i].id})'>
                     <h1>${posts.posts[i].name}</h1>
                 </button>
             </section>
@@ -79,13 +79,13 @@ const arrangeData = () => {
     
 }
 
-const createNewsContentPage = (name, id) =>
+const createNewsContentPage = (id) =>
 {
     console.log("clicked")
     window.location = "news.html"
     try
     {
-        localStorage.newsHeading = name
+        localStorage.newsHeading = postsContents[id].name
     }
     catch(err) {
         console.log(err.message)
@@ -106,5 +106,11 @@ const updateNewsContentPage = () =>
     document.getElementById("news-content").innerHTML = localStorage.newsContent
 }
 
+function convertSinglequote(text)
+{
+    var strArray = text.prototype.split()
+    console.log(strArray)
+    return text
+}
 
 getData();
