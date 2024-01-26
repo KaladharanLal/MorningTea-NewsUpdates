@@ -68,6 +68,18 @@ a, a:visited, a:active
     background-color: rgba(255, 255, 255, 0.888);
     cursor: pointer;
 }
+
+.page-content
+{
+    position: relative;
+    height: 100%;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.55);
+    font-size: large;
+    text-align: justify;
+}
+
 @media (min-width: 50rem) and (max-width: 80rem) {
     .cards
     {
