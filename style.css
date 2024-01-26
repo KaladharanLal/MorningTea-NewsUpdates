@@ -1,8 +1,10 @@
 body
 {
     background: url('https://images.unsplash.com/photo-1514625895778-692f4e00ec41?q=80&w=3174&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-color: white;
     background-repeat: no-repeat;
-    background-size: 170%;
+    background-position-x: center;
+    background-size: auto;
     display: block;
     overflow-x: hidden;
 }
@@ -34,31 +36,71 @@ a, a:visited, a:active
 .cards
 {
     position: absolute;
-    background-color: rgba(250, 235, 215, 0.376);
-    height: 100%;
+    height: 200%;
     width: 100%;
     margin: 0;
     padding: 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(3, 1fr);
 }
 .card
 {
     position: relative;
-    background-color: rgba(0, 255, 255, 0.433);
+    /* background-color: rgba(255, 255, 255, 0.577); */
     height: 100%;
     width: 100%;
+    align-content: center;
+    align-items: center;
+}
+.card .content
+{
+    position: absolute;
+    margin: 2rem;
+    background-color: rgba(255, 255, 255, 0.577);
+    height: calc(100% - 4rem);
+    width: calc(100% - 4rem);
+    border: 0;
+    text-align: left;
+    padding: 2rem;
+}
+.card .content:hover
+{
+    background-color: rgba(255, 255, 255, 0.888);
+    cursor: pointer;
 }
 @media (min-width: 50rem) and (max-width: 80rem) {
     .cards
     {
         grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+    }
+    body
+    {
+        background-position-x: center;
+        background-size: 150%;
     }
 }
 @media (min-width: 80rem) {
     .cards
     {
         grid-template-columns: repeat(3, 1fr);
+        height: 60%;
+    }
+    body
+    {
+        background-position-x: center;
+        background-size: 100%;
+    }
+}
+@media (max-height: 30rem) {
+    .cards
+    {
+        grid-template-columns: repeat(3, 1fr);
+        height: 160%;
+    }
+    body
+    {
+        background-position-x: center;
+        background-size: 100%;
     }
 }
