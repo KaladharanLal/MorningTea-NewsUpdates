@@ -1,20 +1,43 @@
 apiUrl = 'https://webmosaic.petrichor.events/'
 
-var data = null
+var response = null
+var posts = null
+var about = null
 
 async function getData()
 {
-    const response = await fetch(apiUrl+`posts`);
-    data = await response.json();
-    console.log(data)
+    response = await fetch(apiUrl+`posts`);
+    posts = await response.json();
+    response = await fetch(apiUrl+`about`);
+    about = await response.json();
+    console.log(posts)
     arrangeData()
 }
 
 const arrangeData = () => {
-    // var div = document.body.appendChild(document.createElement('div'))
-    // div.classList.add("hi")
-    // div.innerHTML = "Hi"
-    // document.body.innerHTML = data.posts[0].name
+    // Add card headings
+    for(var i=0; i<posts.posts.length; i++)
+    {
+        console.log(posts.posts[i])
+        var div = document.createElement('section')
+        div.classList.add('card')
+        var div2 = document.createElement('h1')
+        div2.innerHTML = posts.posts[i].name
+        div.appendChild(div2)
+        document.getElementById('cards').appendChild(div)
+    }
+
+    // <div class="cards">
+    //         <section class="card">
+    //             <h1>Unveiling the Shadows of Child Mar</h1>
+    //         </section>
+    //     </div>
+
+    if(about)
+    {
+        // document.getElementById("aboutDesc").innerHTML += about.about;
+    }
+    
 }
 
 
