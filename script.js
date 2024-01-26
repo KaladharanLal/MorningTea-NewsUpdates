@@ -14,7 +14,7 @@ const arrangeData = () => {
     // var div = document.body.appendChild(document.createElement('div'))
     // div.classList.add("hi")
     // div.innerHTML = "Hi"
-    document.body.innerHTML = data.posts[0].name
+    // document.body.innerHTML = data.posts[0].name
 }
 
 
